@@ -1,6 +1,7 @@
 import boto3
 import os
 import json
+import urllib.parse
 
 def lambda_handler(event, context):
     s3 = boto3.client('s3', endpoint_url="http://localhost:4566")
@@ -10,7 +11,8 @@ def lambda_handler(event, context):
 
     for record in event['Records']:
         source_bucket = record['s3']['bucket']['name']
-        key = record['s3']['object']['key']
+        # Decode the key to handle spaces and special characters
+        key = urllib.parse.unquote_plus(record['s3']['object']['key'])
         copy_source = {'Bucket': source_bucket, 'Key': key}
 
         s3.copy_object(
