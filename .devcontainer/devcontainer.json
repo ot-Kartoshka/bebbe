@@ -2,7 +2,8 @@
   "name": "My Codespace",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "features": {
-    "terraform": "latest"
+    "terraform": "latest",
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "postCreateCommand": "pip install -r requirements.txt"
+  "postCreateCommand": "pip install -r requirements.txt && pip install localstack"
 }
