@@ -3,8 +3,8 @@ import os
 import json
 
 def lambda_handler(event, context):
-    s3 = boto3.client('s3', endpoint_url="http://localhost:4566")
-    sqs = boto3.client('sqs', endpoint_url="http://localhost:4566")
+    s3 = boto3.client('s3', endpoint_url="http://172.31.24.189:4566")
+    sqs = boto3.client('sqs', endpoint_url="http://172.31.24.189:4566")
     target_bucket = os.environ['TARGET_BUCKET']
     queue_url = os.environ['QUEUE_URL']
 
