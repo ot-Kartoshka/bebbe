@@ -1,0 +1,8 @@
+{
+  "name": "My Codespace",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "terraform": "latest"
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
+}
