@@ -46,8 +46,11 @@ resource "aws_s3_bucket_lifecycle_configuration" "start_lifecycle" {
     expiration {
       days = 1
     }
+
+    filter {}
   }
 }
+
 
 
 resource "aws_sqs_queue" "myqueue" {
