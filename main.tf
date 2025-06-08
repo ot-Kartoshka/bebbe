@@ -18,12 +18,12 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "start" {
-  bucket = "s3-start"
+  bucket = "kartoshka-s3-start"
 }
 
 
 resource "aws_s3_bucket" "finish" {
-  bucket = "s3-finish"
+  bucket = "kartoshka-s3-finish"
 }
 
 
